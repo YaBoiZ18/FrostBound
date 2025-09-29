@@ -258,6 +258,7 @@ GameObject:
   - component: {fileID: 3466713494734223723}
   - component: {fileID: 4373987675925171931}
   - component: {fileID: 4239416079750528166}
+  - component: {fileID: 8637825054702010708}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -328,3 +329,17 @@ MonoBehaviour:
   defaultHeight: 2
   crouchHeight: 1
   crouchSpeed: 3
+--- !u!114 &8637825054702010708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7323357399730370335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c460cb0659814ec449d73b87d7c3f776, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCamera: {fileID: 4287553562735391528}
+  interactRange: 3
