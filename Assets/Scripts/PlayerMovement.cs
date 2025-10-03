@@ -10,8 +10,8 @@ public class PlayerMovement : MonoBehaviour
     public Camera playerCamera;
 
     // Movement speed settings
-    public float walkSpeed = 6f;       // Speed when walking
-    public float runSpeed = 12f;       // Speed when running
+    public float walkSpeed;       // Speed when walking
+    public float runSpeed;       // Speed when running
     public float gravity = 10f;        // Gravity force applied when falling
     // Mouse look settings
     public float lookSpeed = 2f;       // Mouse sensitivity
@@ -77,8 +77,8 @@ public class PlayerMovement : MonoBehaviour
         {
             // Reset to default height and speed when not crouching
             characterController.height = defaultHeight;
-            walkSpeed = 6f;
-            runSpeed = 12f;
+            walkSpeed = 3f;
+            runSpeed = 5f;
         }
 
         // Move the character based on calculated direction
