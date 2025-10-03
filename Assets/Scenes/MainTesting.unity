@@ -786,6 +786,26 @@ PrefabInstance:
       propertyPath: walkSpeed
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5768342363758397573, guid: 97eb5d92b89e2fe418ace1df74e1e627, type: 3}
+      propertyPath: m_Height
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5768342363758397573, guid: 97eb5d92b89e2fe418ace1df74e1e627, type: 3}
+      propertyPath: m_Radius
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5768342363758397573, guid: 97eb5d92b89e2fe418ace1df74e1e627, type: 3}
+      propertyPath: m_Center.x
+      value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 5768342363758397573, guid: 97eb5d92b89e2fe418ace1df74e1e627, type: 3}
+      propertyPath: m_Center.y
+      value: -0.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 5768342363758397573, guid: 97eb5d92b89e2fe418ace1df74e1e627, type: 3}
+      propertyPath: m_Center.z
+      value: 0.18
+      objectReference: {fileID: 0}
     - target: {fileID: 7323357399730370335, guid: 97eb5d92b89e2fe418ace1df74e1e627, type: 3}
       propertyPath: m_Name
       value: PlayerTest
@@ -900,56 +920,56 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentIDCounter: 18
-  json: '{"Options":[],"Parameters":[{"__type":"EditableBoolParameter:#DialogueEditor","ParameterName":"GoodMorning","BoolValue":false}],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":17}],"EditorInfo":{"isRoot":true,"xPos":78.50003,"yPos":32.6661224},"ID":0,"ParamActions":[{"__type":"EditableSetBoolParamAction:#DialogueEditor","ParameterName":"GoodMorning","Value":false}],"TMPFontGUID":null,"Text":"*The
-    radio crackles to life*","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Radio","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":2}],"EditorInfo":{"isRoot":false,"xPos":76.83336,"yPos":263.998749},"ID":1,"ParamActions":[],"TMPFontGUID":null,"Text":"I
+  json: '{"Options":[],"Parameters":[{"__type":"EditableBoolParameter:#DialogueEditor","ParameterName":"GoodMorning","BoolValue":false}],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":17}],"EditorInfo":{"isRoot":true,"xPos":309.166748,"yPos":3.99996948},"ID":0,"ParamActions":[{"__type":"EditableSetBoolParamAction:#DialogueEditor","ParameterName":"GoodMorning","Value":false}],"TMPFontGUID":null,"Text":"*The
+    radio crackles to life*","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Radio","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":2}],"EditorInfo":{"isRoot":false,"xPos":306.833435,"yPos":235.332184},"ID":1,"ParamActions":[],"TMPFontGUID":null,"Text":"I
     arrived late last night. They check your papers at three separate checkpoints
     before letting you into the city - isn''t that wild? We barely have a gate back
     home. Ha ha...","parentUIDs":[16],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"The
-    Doctor","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":4}],"EditorInfo":{"isRoot":false,"xPos":76.83336,"yPos":373.332855},"ID":2,"ParamActions":[],"TMPFontGUID":null,"Text":"The
+    Doctor","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":4}],"EditorInfo":{"isRoot":false,"xPos":306.833435,"yPos":344.666718},"ID":2,"ParamActions":[],"TMPFontGUID":null,"Text":"The
     Director of Medicine had a bed waiting for me here on the top floor of the hospital.","parentUIDs":[1],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"The
-    Doctor","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":5}],"EditorInfo":{"isRoot":false,"xPos":78.83334,"yPos":484.000031},"ID":4,"ParamActions":[],"TMPFontGUID":null,"Text":"It''s.
+    Doctor","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":5}],"EditorInfo":{"isRoot":false,"xPos":308.8334,"yPos":455.334137},"ID":4,"ParamActions":[],"TMPFontGUID":null,"Text":"It''s.
     . .  cozy.","parentUIDs":[2],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"The
-    Doctor","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":6}],"EditorInfo":{"isRoot":false,"xPos":77.5,"yPos":603.3324},"ID":5,"ParamActions":[],"TMPFontGUID":null,"Text":"I
+    Doctor","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":6}],"EditorInfo":{"isRoot":false,"xPos":307.500061,"yPos":574.6664},"ID":5,"ParamActions":[],"TMPFontGUID":null,"Text":"I
     have my own bathroom with real vintage plumbing, but I''ll have to share showers
     with the other doctors living here.","parentUIDs":[4],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"The
-    Doctor","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":7}],"EditorInfo":{"isRoot":false,"xPos":78.83336,"yPos":719.3323},"ID":6,"ParamActions":[],"TMPFontGUID":null,"Text":"The
+    Doctor","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":7}],"EditorInfo":{"isRoot":false,"xPos":308.833435,"yPos":690.66626},"ID":6,"ParamActions":[],"TMPFontGUID":null,"Text":"The
     facility here is nice at least. Lots of old tech, and machines I''ve only read
     about in books. There seems to be a lot of great minds at work here, so hopefully
     we can get to the bottom of this mystery illness quickly. They''re saying it''s
     already at an 8% infection rate, and the pathologists here are scrambling to
     make some progress in developing a cure.","parentUIDs":[5],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"The
-    Doctor","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":8}],"EditorInfo":{"isRoot":false,"xPos":80.83334,"yPos":821.999},"ID":7,"ParamActions":[],"TMPFontGUID":null,"Text":"How
+    Doctor","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":8}],"EditorInfo":{"isRoot":false,"xPos":310.8334,"yPos":793.333252},"ID":7,"ParamActions":[],"TMPFontGUID":null,"Text":"How
     is your constitution? Feeling nervous?","parentUIDs":[6],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"The
-    Doctor","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":9}],"EditorInfo":{"isRoot":false,"xPos":83.4999847,"yPos":927.998535},"ID":8,"ParamActions":[],"TMPFontGUID":null,"Text":"Don''t
+    Doctor","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":9}],"EditorInfo":{"isRoot":false,"xPos":313.500061,"yPos":899.3324},"ID":8,"ParamActions":[],"TMPFontGUID":null,"Text":"Don''t
     worry. I wouldn''t have agreed to come here if I didn''t feel confident that
     you could fill my shoes for a while.","parentUIDs":[7],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"The
-    Doctor","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":10}],"EditorInfo":{"isRoot":false,"xPos":85.5,"yPos":1041.33167},"ID":9,"ParamActions":[],"TMPFontGUID":null,"Text":"You''ll
+    Doctor","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":10}],"EditorInfo":{"isRoot":false,"xPos":315.500061,"yPos":1012.66589},"ID":9,"ParamActions":[],"TMPFontGUID":null,"Text":"You''ll
     be fine.","parentUIDs":[8],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"The
-    Doctor","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":11}],"EditorInfo":{"isRoot":false,"xPos":86.16666,"yPos":1155.99939},"ID":10,"ParamActions":[],"TMPFontGUID":null,"Text":"Although
+    Doctor","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":11}],"EditorInfo":{"isRoot":false,"xPos":316.166718,"yPos":1127.33362},"ID":10,"ParamActions":[],"TMPFontGUID":null,"Text":"Although
     I may be busy I''ll try to be available in the mornings to talk with you if you
     need me. Just give me a buzz.","parentUIDs":[9],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"The
-    Doctor","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":12}],"EditorInfo":{"isRoot":false,"xPos":87.5,"yPos":1261.99915},"ID":11,"ParamActions":[],"TMPFontGUID":null,"Text":"Of
+    Doctor","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":12}],"EditorInfo":{"isRoot":false,"xPos":317.500061,"yPos":1233.33289},"ID":11,"ParamActions":[],"TMPFontGUID":null,"Text":"Of
     course, you''re free to use my library anytime. I''ve been collecting those books
     since I started training to be a doctor. They''re half the reason I got to where
     I am today. You''re smart. Books will make you smarter.","parentUIDs":[10],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"The
-    Doctor","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":13}],"EditorInfo":{"isRoot":false,"xPos":89.5,"yPos":1364.66589},"ID":12,"ParamActions":[],"TMPFontGUID":null,"Text":"But...
+    Doctor","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":13}],"EditorInfo":{"isRoot":false,"xPos":319.500061,"yPos":1335.99988},"ID":12,"ParamActions":[],"TMPFontGUID":null,"Text":"But...
     please be sure to pace yourself. Don''t work yourself into exhaustion. An exhausted
     doctor kills patients. And dead patients mean angry families. Angry families
     mean an unhappy town. And... well, let''s just say you''ll put the both of us
     out of business. Ha ha...","parentUIDs":[11],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"The
-    Doctor","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":14}],"EditorInfo":{"isRoot":false,"xPos":90.83334,"yPos":1466.66565},"ID":13,"ParamActions":[],"TMPFontGUID":null,"Text":"You
+    Doctor","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":14}],"EditorInfo":{"isRoot":false,"xPos":320.8334,"yPos":1437.99963},"ID":13,"ParamActions":[],"TMPFontGUID":null,"Text":"You
     must remain alert and refreshed in order to practice good medicine. We''re still
     human, after all. Even the best of us need time to rest and recover.","parentUIDs":[12],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"The
-    Doctor","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":15}],"EditorInfo":{"isRoot":false,"xPos":92.83333,"yPos":1569.99939},"ID":14,"ParamActions":[],"TMPFontGUID":null,"Text":"\"Alright,
+    Doctor","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":15}],"EditorInfo":{"isRoot":false,"xPos":322.833374,"yPos":1541.33337},"ID":14,"ParamActions":[],"TMPFontGUID":null,"Text":"\"Alright,
     I''ve talked your ear off enough for now. I''m due to meet the other doctors
     and introduce myself to my assigned patients.","parentUIDs":[13],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"The
-    Doctor","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":94.83333,"yPos":1672.66565},"ID":15,"ParamActions":[{"__type":"EditableSetBoolParamAction:#DialogueEditor","ParameterName":"GoodMorning","Value":false}],"TMPFontGUID":null,"Text":"Oh
+    Doctor","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":324.833374,"yPos":1643.99939},"ID":15,"ParamActions":[{"__type":"EditableSetBoolParamAction:#DialogueEditor","ParameterName":"GoodMorning","Value":true}],"TMPFontGUID":null,"Text":"Oh
     and remember - [NPC NAME] is due to come by and pick up her husband''s prescription
     sometime today. She paid in advance so you just need to bottle it up for her.
     The script is on the Pharm Table.","parentUIDs":[14],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"The
-    Doctor","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":1}],"EditorInfo":{"isRoot":false,"xPos":77.49989,"yPos":160.664856},"ID":16,"ParamActions":[],"TMPFontGUID":null,"Text":"Ah,
+    Doctor","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":1}],"EditorInfo":{"isRoot":false,"xPos":307.499939,"yPos":131.998444},"ID":16,"ParamActions":[],"TMPFontGUID":null,"Text":"Ah,
     Good morning. Holding down the fort well enough, I take it?","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"The
-    Doctor","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":366.1666,"yPos":161.998352},"ID":17,"ParamActions":[{"__type":"EditableSetBoolParamAction:#DialogueEditor","ParameterName":"GoodMorning","Value":true}],"TMPFontGUID":null,"Text":"The
+    Doctor","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":596.1667,"yPos":133.33194},"ID":17,"ParamActions":[{"__type":"EditableSetBoolParamAction:#DialogueEditor","ParameterName":"GoodMorning","Value":true}],"TMPFontGUID":null,"Text":"The
     Doctor must be busy. . .","parentUIDs":[0],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
   saveVersion: 110
   DefaultName: The Doctor
@@ -1136,7 +1156,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Event:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   NodeID: 0
   TMPFont: {fileID: 0}
   Icon: {fileID: 0}
@@ -1856,15 +1888,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7990738056145218929, guid: be2267ca89dc7b0408e4ce4a4ee58039, type: 3}
       propertyPath: m_Size.x
-      value: 0.31732684
+      value: 0.41854474
+      objectReference: {fileID: 0}
+    - target: {fileID: 7990738056145218929, guid: be2267ca89dc7b0408e4ce4a4ee58039, type: 3}
+      propertyPath: m_Size.y
+      value: 0.33157334
+      objectReference: {fileID: 0}
+    - target: {fileID: 7990738056145218929, guid: be2267ca89dc7b0408e4ce4a4ee58039, type: 3}
+      propertyPath: m_Size.z
+      value: 0.5574703
       objectReference: {fileID: 0}
     - target: {fileID: 7990738056145218929, guid: be2267ca89dc7b0408e4ce4a4ee58039, type: 3}
       propertyPath: m_Center.x
-      value: -0.03439139
+      value: -0.085000135
+      objectReference: {fileID: 0}
+    - target: {fileID: 7990738056145218929, guid: be2267ca89dc7b0408e4ce4a4ee58039, type: 3}
+      propertyPath: m_Center.y
+      value: 0.140998
       objectReference: {fileID: 0}
     - target: {fileID: 7990738056145218929, guid: be2267ca89dc7b0408e4ce4a4ee58039, type: 3}
       propertyPath: m_Center.z
-      value: -0.020970972
+      value: -0.011220508
       objectReference: {fileID: 0}
     - target: {fileID: 8059287080384847228, guid: be2267ca89dc7b0408e4ce4a4ee58039, type: 3}
       propertyPath: message
