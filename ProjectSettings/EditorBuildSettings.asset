@@ -6,8 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Zarin'sFolder/Test Scenes/Zarin'sTestingArea_PlayerControls.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/_MainMenu-Oliver.unity
+    guid: 17d4bf9fc5037c040800d93693381d89
+  - enabled: 1
+    path: Assets/Scenes/MainTesting.unity
+    guid: cf44abc59d64e744ab2a0f79066bce60
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
