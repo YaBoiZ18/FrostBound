@@ -17,6 +17,7 @@ public class NarrativeTextReveal : MonoBehaviour
     [Header("Shared")]
     [TextArea(3, 10)] public string sourceText;
     public bool useUnscaledTime = true;
+    public float initialDelay = 0f;
 
     [Header("Typewriter")]
     public float charsPerSecond = 35f;
@@ -117,7 +118,7 @@ public class NarrativeTextReveal : MonoBehaviour
         SetAllCharAlpha(0f);
 
         // optional initial delay (skippable if FF pressed)
-        float remainingDelay = Mathf.Max(0f, startDelay);
+        float remainingDelay = Mathf.Max(0f, initialDelay + startDelay);
         while (remainingDelay > 0f)
         {
             if (IsFastForwarding && fastForwardSkipsStartDelay) break;
@@ -213,6 +214,8 @@ public class NarrativeTextReveal : MonoBehaviour
     {
         // start fully transparent
         SetAllCharAlpha(0f);
+
+        float remainingDelay = Mathf.Max(0f, initialDelay);
 
         // ensure fresh info
         label.ForceMeshUpdate(ignoreActiveState: true, forceTextReparsing: false);
