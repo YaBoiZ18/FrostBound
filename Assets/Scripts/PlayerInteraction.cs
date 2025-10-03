@@ -31,6 +31,11 @@ public class PlayerInteraction : MonoBehaviour
 
                     currentInteractable = interactable;
                     currentInteractable.EnableOutLine();
+
+
+                    // Show interaction message
+                    HUDController.instance.EnableInteraction(currentInteractable.message);
+
                 }
                 return;
             }
@@ -45,6 +50,7 @@ public class PlayerInteraction : MonoBehaviour
         if (currentInteractable != null)
         {
             currentInteractable.DisableOutLine();
+            HUDController.instance.DisableInteraction(""); // You can ignore the parameter if not needed
             currentInteractable = null;
         }
     }
