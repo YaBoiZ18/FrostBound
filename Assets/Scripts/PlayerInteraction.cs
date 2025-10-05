@@ -5,11 +5,18 @@ public class PlayerInteraction : MonoBehaviour
     public Camera playerCamera;
     public float interactRange = 3f; // Max distance to detect interactables
 
+    public KeyCode interactKey = KeyCode.F;
+
     private Interactable currentInteractable;
 
     void Update()
     {
         CheckForInteractable();
+
+        if (Input.GetKeyDown(interactKey) && currentInteractable != null)
+        {
+            currentInteractable.Interact(this);
+        }
     }
 
     void CheckForInteractable()

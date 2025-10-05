@@ -6,6 +6,11 @@ public class Interactable : MonoBehaviour
     Outline outline;
     public string message;
 
+    public virtual void Interact(PlayerInteraction interaction) 
+    {
+        onInteraction.Invoke();
+    }
+
     public UnityEvent onInteraction;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
