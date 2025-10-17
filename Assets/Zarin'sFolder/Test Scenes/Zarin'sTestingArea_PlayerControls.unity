@@ -1298,10 +1298,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 972774950dea9034d800ffaf54cec9f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npcPrefab: {fileID: 8108349059826455277, guid: d1dab86dd4dea414dbdeff0568da38e0, type: 3}
+  npcPrefabs:
+  - {fileID: 8108349059826455277, guid: d1dab86dd4dea414dbdeff0568da38e0, type: 3}
+  - {fileID: 8108349059826455277, guid: 739680efcb3c1f747a7c03fb9d73a5fe, type: 3}
+  - {fileID: 8108349059826455277, guid: 19847b8dad685d349a76ea909f8b58e2, type: 3}
   spawnPoint: {fileID: 51116954}
   spawnInterval: 5
-  spawnLimit: 3
 --- !u!4 &723955825
 Transform:
   m_ObjectHideFlags: 0
