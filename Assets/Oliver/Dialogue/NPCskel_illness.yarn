@@ -1,0 +1,62 @@
+title: NPCskel_illness_greet
+tags: #day1
+---
+<<if !$alive>>
+    <<jump NPCskel_foundDead>>
+    <<endif>>
+NPC: Yes?
+    -> How are you feeling today?
+        <<jump NPCskel_Day1_symptoms>>
+    -> Examine Body.
+        <<jump NPCskel_examineBody>>
+    -> Nothing right now.
+        NPC: Alright, take care.
+===
+
+title: NPC_vars
+---
+<<declare $target = "" as String>>
+<<declare $illness = "" as String>>
+<<declare $part = "" as String>>
+
+<<declare $alive = true as Bool>>
+<<declare $admitted = false as Bool>>
+<<declare $turnedaway = false as Bool>>
+
+<<declare $day = 1 as Number>>
+===
+
+title: NPCskel_Day1_symptoms
+---
+NPC: My chest hurts, and I can't seem to control this cough.
+NPC: I'm nauseous and have no appetite.
+<<jump NPCskel_illness_greet>>
+===
+
+title: NPCskel_examineBody
+tags: #day1
+---
+NPC: What's first?
+-> Head 
+    <<set $part = "head">>
+-> Torso
+    <<set $part = "torso">>
+-> Arms
+    <<set $part = "arms">>
+-> Legs
+    <<set $part = "legs">>
+-> Return
+    <<jump NPCskel_illness_greet>>
+<<set $target = ill_node($illness,$part)>>
+<<goto_node $target>>
+//<<stop>>
+===
+
+title: NPCskel_foundDead
+---
+NPC is not breathing.
+NPC has no pulse.
+NPC's skin is cold and clammy.
+NPC's eyes are open and unresponsive.
+You have lost the patient.
+===

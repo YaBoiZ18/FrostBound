@@ -1,5 +1,73 @@
 ﻿title: NPC1_Start
+position: -465,-476
 ---
 NPC1: *cough* *cough* *cough*
 NPC1: Ooh, ugh... my chest...
+    -> Treat Head
+    -> Treat Chest
+    -> Treat Arm
+    -> Treat Leg
+    -> Do Nothing
+===
+
+title: NPC1_greet1
+tags: when npc1 first arrives at the house
+position: 0,0
+---
+NPC1: Morning - is the doctor in?
+	-> Sorry, no. The doctor will be away for a few days.
+	-> What do you want?
+NPC1: Oh well... You see, I've had this terrible cough the last few days. I've been drinking only tea and broth, but it's not getting better.
+NPC1: Isn't there anything that you can do?
+	-> I can see you, come down to the Med Bay.
+	-> Are you sure you want me to examine you? I'm just the Apprentice.
+    <<jump NPC1_greet_areyousure>>
+NPC1: Thanks! You're the best!
+===
+
+title: NPC1_greet_areyousure
+position: -232,174
+---
+NPC1: Please, there's no one else I can turn to right now.
+    -> Fine, come down to the Med Bay.
+NPC1: Thank you so much!
+===
+
+title: NPC1_examine
+position: 707,-1079
+---
+NPC1: What's first doc?
+    -> Examine Head
+    <<jump NPC1_examine_head>>
+    -> Examine Chest
+    <<jump NPC1_examine_chest>>
+    -> Examine Arms
+    <<jump NPC1_examine_arms>>
+    -> Examine Legs
+    <<jump NPC1_examine_legs>>
+    -> I need to check something first.
+===
+
+title: NPC1_examine_head
+position: 224,-751
+---
+:
+===
+
+title: NPC1_examine_chest
+position: 452,-640
+---
+:
+===
+
+title: NPC1_examine_arms
+position: 683,-638
+---
+:
+===
+
+title: NPC1_examine_legs
+position: 911,-671
+---
+:
 ===

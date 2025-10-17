@@ -1,0 +1,68 @@
+title: NPCskel_greet
+tags: #intro
+---
+<<if $admitted>>
+    <<jump NPCskel_illness_greet>>
+    <<endif>>
+NPC: Good morning. Is the doctor in?
+	-> Sorry, no. The doctor will be away for a few days.
+	-> What do you want?
+NPC: Oh well... You see, I've had this terrible cough the last few days. I've been drinking only tea and broth, but it's not getting better.
+NPC: Isn't there anything that you can do?
+	-> I can see you, come down to the Med Bay.
+	-> I need to ask you a few questions first.
+		<<jump NPCskel_interview>>
+NPC: Thanks! You're the best!
+===
+
+title: NPCskel_interview
+tags: #intro
+---
+NPC: What do you need to know?
+	-> Who are you?
+		<<jump NPCskel_WRU>>
+	-> What symptoms do you have?
+		<<jump NPCskel_symptoms>>
+	-> I've heard all I've needed to hear.
+		<<jump NPCskel_NEthingUCanDo>>
+===
+
+title: NPCskel_WRU
+tags: #intro
+---
+NPC: My name is NPC. I am one of the townsfolk.
+	-> Okay.
+		<<jump NPCskel_interview>>
+===
+
+title: NPCskel_symptoms
+tags: #intro
+---
+NPC: I have a terrible cough. My throat hurts and sometimes it's hard to breathe.
+	-> Okay.
+		<<jump NPCskel_interview>>
+===
+
+title: NPCskel_NEthingUCanDo
+tags: #intro
+---
+NPC: Isn't there anything you can do?
+	-> I can see you, come down to the Med Bay.
+		<<jump NPCskel_thxLetIn>>
+	-> Sorry, there's no room.
+		<<jump NPCskel_turnedaway>>
+===
+
+title: NPCskel_thxLetIn
+tags: #intro
+---
+NPC: Thank you so much! I appreciate it!
+<<set $admitted = true>>
+===
+
+title: NPCskel_turnedaway
+tags: #intro
+---
+NPC: Oh okay... sorry for bothering you.
+<<set $turnedaway = true>>
+===

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using Yarn.Unity;
 
@@ -9,12 +10,26 @@ public class DialogueInteractable : Interactable
     public string startNode;
 
     [Header("Lock Player While Talking")]
-    // drag the scripts to be disabled during dialogue
     public Behaviour[] componentsToDisable;
     public bool unlockCursorDuringDialogue = true;
 
+    [Header("Testing Overrides")]
+    public bool overrideIllnessForTesting = false;
+    public string illnessOverrideKey = "";
+    public bool onlyAffectsYarn = true;
+
+    public InMemoryVariableStorage storage;
+    public string illnessName = "$illness"; // Yarn variable key for illness
+    public NPCState npcState;
+
     private PlayerInteraction _lastInteractor;
     private readonly List<Behaviour> _disabledThisConversation = new();
+
+    private void Awake()
+    {
+        if (!storage) storage = FindFirstObjectByType<InMemoryVariableStorage>();
+        if (!npcState) npcState = GetComponent<NPCState>();
+    }
 
     void Reset()
     {
@@ -36,29 +51,72 @@ public class DialogueInteractable : Interactable
 
     public override void Interact(PlayerInteraction interactor)
     {
-        base.Interact(interactor); // still fire UnityEvent if anything is selected
+        // decide illness (NPC’s or test override)
+        string chosenIllness = npcState ? npcState.illnessKey : "";
+        if (overrideIllnessForTesting && !string.IsNullOrWhiteSpace(illnessOverrideKey))
+            chosenIllness = illnessOverrideKey.Trim();
 
-        if (!runner)
+        // fallback: assign if missing via registry
+        if (string.IsNullOrWhiteSpace(chosenIllness) && npcState && !string.IsNullOrWhiteSpace(npcState.npcId) && IllnessRegistry.IR != null)
         {
-            Debug.LogWarning("[DialogueInteractable] No DialogueRunner found in scene.");
-            return;
+            chosenIllness = IllnessRegistry.IR.AssignIfMissing(npcState.npcId) ?? "";
+            npcState.illnessKey = chosenIllness;
         }
-        if (runner.IsDialogueRunning)
-            return; // prevent overlap
+
+        // push Yarn vars once
+        if (storage)
+        {
+            if (runner && runner.VariableStorage != storage)
+            {
+                runner.VariableStorage = storage;
+            }
+            if (runner && storage.Program == null && runner.YarnProject != null)
+            {
+                storage.Program = runner.YarnProject.Program;
+            }
+
+            if (npcState) storage.SetValue("$npc_id", npcState.npcId);
+
+            // normalize keys
+            var customKey = string.IsNullOrEmpty(illnessName)
+                ? "$illness"
+                : (illnessName.StartsWith("$") ? illnessName : "$" + illnessName);
+
+            // always set canonical $illness used by Yarn scripts
+            storage.SetValue("$illness", chosenIllness ?? string.Empty);
+            Debug.Log($"[DialogueInteractable] Set $illness = '{chosenIllness}'", this);
+
+            // if a custom key differs, mirror to it too (keeps backward compat)
+            if (!customKey.Equals("$illness"))
+            {
+                storage.SetValue(customKey, chosenIllness ?? string.Empty);
+                Debug.Log($"[DialogueInteractable] Set {customKey} = '{chosenIllness}'", this);
+            }
+        }
+
+#if UNITY_EDITOR
+        if (!onlyAffectsYarn && npcState && IllnessRegistry.IR != null && !string.IsNullOrEmpty(chosenIllness))
+            IllnessRegistry.IR.DebugSetIllness(npcState.npcId, chosenIllness);
+#endif
+
+        base.Interact(interactor);
+
+        if (!runner) { Debug.LogWarning("[DialogueInteractable] No DialogueRunner found."); return; }
+        if (runner.IsDialogueRunning) return;
 
         _lastInteractor = interactor;
-
-        // LOCK controls
         LockControls(interactor);
 
-        // start the node
         var node = string.IsNullOrEmpty(startNode) ? runner.startNode : startNode;
         runner.StartDialogue(node);
     }
 
     void OnDialogueComplete()
     {
-        // unlock controls on completion
+        // If a command-driven internal jump is happening, don't unlock controls here.
+        if (DialogueBridge.IsInternalGotoInProgress) return;
+
+        // unlock controls on real completion
         ForceUnlockControls();
         _lastInteractor = null;
     }
@@ -101,16 +159,11 @@ public class DialogueInteractable : Interactable
 
     void ForceUnlockControls()
     {
-        // re-enable everything we actually disabled for this conversation
         for (int i = 0; i < _disabledThisConversation.Count; i++)
-        {
-            var b = _disabledThisConversation[i];
-            if (b) b.enabled = true;
-        }
+            if (_disabledThisConversation[i]) _disabledThisConversation[i].enabled = true;
         _disabledThisConversation.Clear();
 
-        // restore cursor for gameplay
-        Cursor.lockState = CursorLockMode.None;
+        Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
 }

@@ -1,6 +1,6 @@
 title: Start_Radio
 tags: #radio at start of game
-position: -105,-373
+position: -88,-409
 ---
 RADIO: The radio crackles to life.
 <<if $TD_GoodMorning is false>>
@@ -12,7 +12,7 @@ RADIO: The radio crackles to life.
 
 title: R_NoOneThere
 tags: #radio
-position: 281,-176
+position: 298,-212
 ---
 RADIO: There's no one there.
 RADIO: The Doctor must be busy.
@@ -20,31 +20,32 @@ RADIO: The Doctor must be busy.
 
 title: TD_GoodMorning
 tags: #opening sequence at the start of the game
-position: -105,29
+position: -89,-132
 ---
 The Doctor: Ah, Good morning. Holding down the fort well enough, I take it?
-The Doctor: I arrived late last night. They check your papers at three separate checkpoints before letting you into the city - isn't that wild? We barely have a gate back home. Ha ha...
-The Doctor: The Director of Medicine had a bed waiting for me here on the top floor of the hospital.
-The Doctor: It's... cozy.
-The Doctor: I have my own bathroom, but I'll have to share showers with the other doctors living here.
-The Doctor: The facility here is nice at least. Lots of old tech, and machines I've only read about in books. 
-The Doctor: There seems to be a lot of great minds at work here, so hopefully we can get to the bottom of this mystery illness quickly. 
-The Doctor: They're saying it's already at an 8% infection rate, and the pathologists here are scrambling to make some progress in developing a cure.
-The Doctor: How is your constitution? Feeling nervous?
-The Doctor: Don't worry. I wouldn't have agreed to come here if I didn't feel confident that you could fill my shoes for a while.
-The Doctor: You'll do fine. I'll be back before you know it.
-The Doctor: Although I may be busy I'll try to be available in the mornings to talk with you if you need me. Just give me a buzz.
-The Doctor: Of course, you're free to use my library anytime. I've been collecting those books since I started training to be a doctor. They're half the reason I got to where I am today. You're smart. Books will make you smarter.
-The Doctor: But... please be sure to pace yourself. Don't work yourself into exhaustion. An exhausted doctor kills patients. And dead patients mean angry families. Angry families mean an unhappy town. And... well, let's just say you'll put the both of us out of business. Ha ha...
-The Doctor: You must remain alert and refreshed in order to practice good medicine. We're still human, after all. Even the best of us need time to rest and recover.
-The Doctor: Alright, I've talked your ear off enough for now. I'm due to meet the other doctors and introduce myself to my assigned patients.
-The Doctor: Oh and remember - /NPC_NAME/ is supposed to come by and pick up her husband's prescription sometime today. She paid in advance so you just need to bottle it up for her. The script is on the Pharm Table.
+//The Doctor: I arrived late last night. They check your papers at three separate checkpoints before letting you into the city - isn't that wild? We barely have a gate back home. Ha ha...
+//The Doctor: The Director of Medicine had a bed waiting for me here on the top floor of the hospital.
+//The Doctor: It's... cozy.
+//The Doctor: I have my own bathroom, but I'll have to share showers with the other doctors living here.
+//The Doctor: The facility here is nice at least. Lots of old tech, and machines I've only read about in books. 
+//The Doctor: There seems to be a lot of great minds at work here, so hopefully we can get to the bottom of this mystery illness quickly. 
+//The Doctor: They're saying it's already at an 8% infection rate, and the pathologists here are scrambling to make some progress in developing a cure.
+//The Doctor: How is your constitution? Feeling nervous?
+//The Doctor: Don't worry. I wouldn't have agreed to come here if I didn't feel confident that you could fill my shoes for a while.
+//The Doctor: You'll do fine. I'll be back before you know it.
+//The Doctor: Although I may be busy I'll try to be available in the mornings to talk with you if you need me. Just give me a buzz.
+//The Doctor: Of course, you're free to use my library anytime. I've been collecting those books since I started training to be a doctor. They're half the reason I got to where I am today. You're smart. Books will make you smarter.
+//The Doctor: But... please be sure to pace yourself. Don't work yourself into exhaustion. An exhausted doctor kills patients. And dead patients mean angry families. Angry families mean an unhappy town. And... well, let's just say you'll put the both of us out of business. Ha ha...
+//The Doctor: You must remain alert and refreshed in order to practice good medicine. We're still human, after all. Even the best of us need time to rest and recover.
+//The Doctor: Alright, I've talked your ear off enough for now. I'm due to meet the other doctors and introduce myself to my assigned patients.
+//The Doctor: Oh and remember - /NPC_NAME/ is supposed to come by and pick up her husband's prescription sometime today. She paid in advance so you just need to bottle it up for her. The script is on the Pharm Table.
 The Doctor: Good luck!
 <<set $TD_GoodMorning = true>>
 ===
 
 title: N_Start
 tags: #The Doc's notebook on the desk
+position: -511,-264
 ---
 Notebook: Notes on the last patients that were seen before the Doctor left.
 ===

@@ -1,0 +1,5 @@
+//variables specific to the game or the player only
+title: TheDoctor_vars
+---
+<<declare $TD_GoodMorning = false as Bool>>
+===

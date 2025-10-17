@@ -1,0 +1,36 @@
+title: frostbite_head
+---
+The forehead and cheeks are very cold to the touch.
+The nose is red and numb.
+<<jump NPCskel_illness_greet>>
+===
+
+title: frostbite_torso
+---
+The torso is cold, but the lungs seem strong.
+<<jump NPCskel_illness_greet>>
+===
+
+title: frostbite_arms
+---
+The hands are cold and hard and have started to swell.
+The skin feels waxy and pale.
+Patient says several fingers have gone numb.
+<<jump NPCskel_illness_greet>>
+===
+
+title: frostbite_legs
+---
+The feet are stiff and have started to swell.
+Patient says they feel a slight tingling in their heels.
+Several toes are discolored, dark red and starting to purple in spots.
+<<jump NPCskel_illness_greet>>
+===
+
+title: frostbite_diagnosis
+---
+The patient is suffering from frostbite, likely from prolonged exposure to cold temperatures. 
+The affected areas include the extremities, such as the fingers and toes, which are most vulnerable to frostbite. 
+Immediate treatment is necessary to prevent further tissue damage.
+<<jump NPCskel_illness_greet>>
+===

@@ -1,0 +1,34 @@
+title: flu_head
+---
+The forehead and cheeks are warm. 
+The eyes are watery and red.
+The nose is congested and runny.
+<<jump NPCskel_illness_greet>>
+===
+
+title: flu_torso
+---
+The lungs sound congested, and there is a persistent cough.
+Patient seems to wheeze as they inhale and exhale.
+<<jump NPCskel_illness_greet>>
+===
+
+title: flu_arms
+---
+The arms seem healthy and strong.
+<<jump NPCskel_illness_greet>>
+===
+
+title: flu_legs
+---
+The legs appear healthy and strong.
+<<jump NPCskel_illness_greet>>
+===
+
+title: flu_diagnosis
+---
+The patient is suffering from the flu, a common viral infection that affects the respiratory system.
+The illness is typically self-limiting, but rest and hydration are recommended to aid recovery.
+Simple medications can help alleviate more severe symptoms.
+<<jump NPCskel_illness_greet>>
+===

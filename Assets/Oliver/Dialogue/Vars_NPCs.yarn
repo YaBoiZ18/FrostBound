@@ -1,0 +1,18 @@
+//variables specific to NPCs only
+//title: NPC_vars
+//---
+//<<declare $target = "" as String>>
+//<<declare $illness = "" as String>>
+//<<declare $part = "" as String>>
+
+//<<declare $alive = true as Bool>>
+//<<declare $admitted = false as Bool>>
+//<<declare $turnedaway = false as Bool>>
+
+//<<declare $day = 1 as Number>>
+//===
+
+title: zz_NPC_vars
+---
+//comment
+===
