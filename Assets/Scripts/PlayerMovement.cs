@@ -1,99 +1,125 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-// Ensures the GameObject has a CharacterController component
 [RequireComponent(typeof(CharacterController))]
 public class PlayerMovement : MonoBehaviour
 {
-    // Reference to the player's camera for mouse look
-    public Camera playerCamera;
+    [Header("References")]
+    [SerializeField] private Camera playerCamera;     // The camera used for first-person view
+    private CharacterController controller;           // Cached CharacterController reference
 
-    // Movement speed settings
-    public float walkSpeed;       // Speed when walking
-    public float runSpeed;       // Speed when running
-    public float gravity = 10f;        // Gravity force applied when falling
-    // Mouse look settings
-    public float lookSpeed = 2f;       // Mouse sensitivity
-    public float lookXLimit = 45f;     // Vertical look limit
-    // Crouch settings
-    public float defaultHeight = 2f;   // Normal character height
-    public float crouchHeight = 1f;    // Height when crouching
-    public float crouchSpeed = 3f;     // Speed when crouched
+    [Header("Movement Settings")]
+    [SerializeField] private float walkSpeed = 3f;    // Default walking speed
+    [SerializeField] private float runSpeed = 5f;     // Speed when running
+    [SerializeField] private float gravity = 10f;     // Downward force applied when airborne
 
-    // Internal state variables
-    private Vector3 moveDirection = Vector3.zero; // Movement direction vector
-    private float rotationX = 0;                  // Vertical camera rotation
-    private CharacterController characterController; // Reference to CharacterController
+    [Header("Mouse Look Settings")]
+    [SerializeField] private float lookSpeed = 2f;    // Sensitivity for mouse movement
+    [SerializeField] private float lookXLimit = 45f;  // Vertical rotation clamp (prevents flipping camera)
 
-    private bool canMove = true; // Controls whether movement is allowed
+    [Header("Crouch Settings")]
+    [SerializeField] private float defaultHeight = 2f;  // Standing height
+    [SerializeField] private float crouchHeight = 1f;   // Height when crouched
+    [SerializeField] private float crouchSpeed = 3f;    // Movement speed while crouched
+
+
+    private Vector3 moveDirection = Vector3.zero;     // Current player velocity vector
+    private float rotationX = 0f;                     // Vertical camera rotation value
+    private bool canMove = true;                      // Determines if movement and look are active
+
+    public bool disabled = false;
+
 
     void Start()
     {
-        // Get the CharacterController component attached to this GameObject
-        characterController = GetComponent<CharacterController>();
+        // Cache the CharacterController reference
+        controller = GetComponent<CharacterController>();
 
-        // Lock and hide the cursor for immersive gameplay
+        // Lock and hide the cursor for first-person gameplay
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
 
     void Update()
     {
-        // Get directional vectors relative to the player's orientation
+        if (!disabled)
+        {
+            // Handle player motion and view rotation each frame
+            HandleMovement();
+            HandleMouseLook();
+        }
+       
+    }
+
+    private void HandleMovement()
+    {
+        // Calculate direction vectors relative to player facing direction
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
 
-        // Check if the player is holding the run key (Left Shift)
-        bool isRunning = Input.GetKey(KeyCode.LeftShift);
+        // Check player inputs
+        bool isRunning = Input.GetKey(KeyCode.LeftShift);    // Hold Left Shift to run
+        bool isCrouching = Input.GetKey(KeyCode.LeftControl); // Hold Left Ctrl to crouch
 
-        // Calculate movement speed based on input and running state
-        float curSpeedX = canMove ? (isRunning ? runSpeed : walkSpeed) * Input.GetAxis("Vertical") : 0;
-        float curSpeedY = canMove ? (isRunning ? runSpeed : walkSpeed) * Input.GetAxis("Horizontal") : 0;
+        // Determine desired movement speed based on input and running state
+        float currentSpeedX = canMove ? GetCurrentSpeed(isRunning) * Input.GetAxis("Vertical") : 0f;
+        float currentSpeedY = canMove ? GetCurrentSpeed(isRunning) * Input.GetAxis("Horizontal") : 0f;
 
-        // Preserve vertical movement (e.g., falling)
-        float movementDirectionY = moveDirection.y;
+        // Preserve vertical (Y-axis) velocity for jumping or falling
+        float verticalVelocity = moveDirection.y;
 
-        // Combine forward and sideways movement
-        moveDirection = (forward * curSpeedX) + (right * curSpeedY);
-
-        // Apply preserved vertical movement
-        moveDirection.y = movementDirectionY;
+        // Combine forward/backward and strafe movement
+        moveDirection = (forward * currentSpeedX) + (right * currentSpeedY);
+        moveDirection.y = verticalVelocity;
 
         // Apply gravity when not grounded
-        if (!characterController.isGrounded)
-        {
+        if (!controller.isGrounded)
             moveDirection.y -= gravity * Time.deltaTime;
-        }
 
-        // Handle crouching when the crouch key (R) is held
-        if (Input.GetKey(KeyCode.LeftControl) && canMove)
+        // Handle crouch input and adjust height/speed
+        HandleCrouch(isCrouching);
+
+        // Finally, apply movement to the CharacterController
+        controller.Move(moveDirection * Time.deltaTime);
+    }
+
+    // Returns the correct movement speed depending on whether the player is running or walking
+    private float GetCurrentSpeed(bool isRunning)
+    {
+        return isRunning ? runSpeed : walkSpeed;
+    }
+
+    // Handles crouching logic, adjusting character height and speed
+    private void HandleCrouch(bool isCrouching)
+    {
+        if (isCrouching && canMove)
         {
-            characterController.height = crouchHeight; // Set crouch height
-            walkSpeed = crouchSpeed;                  // Reduce walk speed
-            runSpeed = crouchSpeed;                   // Reduce run speed
+            // Reduce height and speed when crouched
+            controller.height = crouchHeight;
+            walkSpeed = crouchSpeed;
+            runSpeed = crouchSpeed;
         }
         else
         {
-            // Reset to default height and speed when not crouching
-            characterController.height = defaultHeight;
+            // Restore default height and speed when not crouching
+            controller.height = defaultHeight;
             walkSpeed = 3f;
             runSpeed = 5f;
         }
+    }
 
-        // Move the character based on calculated direction
-        characterController.Move(moveDirection * Time.deltaTime);
+    private void HandleMouseLook()
+    {
+        // Skip look logic if player movement is disabled
+        if (!canMove) return;
 
-        // Handle mouse look if movement is allowed
-        if (canMove)
-        {
-            // Vertical camera rotation (look up/down)
-            rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
-            rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit); // Clamp to prevent over-rotation
-            playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
+        // Vertical camera rotation (look up/down)
+        rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
+        rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
 
-            // Horizontal player rotation (turn left/right)
-            transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
-        }
+        // Apply rotation to camera’s local transform
+        playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
+
+        // Horizontal rotation (turn player body left/right)
+        transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
     }
 }

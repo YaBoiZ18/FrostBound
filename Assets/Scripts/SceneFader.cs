@@ -74,13 +74,13 @@ public class SceneFader : MonoBehaviour
     private void Update()
     {
         // Press 'A' to fade to "FadetoBlackTesting" scene
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.N))
         {
             FadeAndLoad("FadetoBlackTesting", 1f);
         }
 
         // Press 'B' to fade to "FadetoBlackTestingPrt2" scene
-        if (Input.GetKeyDown(KeyCode.B))
+        if (Input.GetKeyDown(KeyCode.M))
         {
             FadeAndLoad("FadetoBlackTestingPrt2", 1f);
         }
